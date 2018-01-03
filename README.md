@@ -1,3 +1,3 @@
 # lunarc-docker
 
-* Golang 1.7
+* Golang 1.9
