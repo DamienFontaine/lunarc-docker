@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -t damienfontaine/lunarc:0.0.4-arm64v8 arm64v8/Dockerfile
+  - docker build -t damienfontaine/lunarc:0.0.4 amd64/Dockerfile
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+script:
+  - docker push damienfontaine/lunarc:0.0.4-arm64v8 
+  - docker push damienfontaine/lunarc:0.0.4 
