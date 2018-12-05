@@ -2,8 +2,8 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker pull golang:1.9.2-stretch
-  - docker build -t damienfontaine/lunarc:0.0.4 amd64/.
+  - docker pull golang:1.10-stretch
+  - docker build -t damienfontaine/lunarc:0.0.5 amd64/.
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
 script:
-  - docker push damienfontaine/lunarc:0.0.4 
+  - docker push damienfontaine/lunarc:0.0.5
